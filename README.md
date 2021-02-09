@@ -1,4 +1,5 @@
 # A10FlightSimulator
+<img src = "https://github.com/tbies/A10FlightSimulator/blob/main/Cover.jpg" >
 Home Flight Simulator Cockpit project based on the A-10 Thunderbolt II Warthog.  
 
 This repo contains the following
