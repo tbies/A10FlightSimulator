@@ -1,6 +1,6 @@
 # A10FlightSimulator
 <img src = "https://github.com/tbies/A10FlightSimulator/blob/main/Cover.jpg" >
-Home Flight Simulator Cockpit project based on the A-10 Thunderbolt II Warthog.  
+Tom's Home Flight Simulator Cockpit project based on the A-10 Thunderbolt II Warthog aircraft flown by the United States Air Force.  
 
 This repo contains the following:
 * Modified LUA Code for the DCS Flight Simulator Platform and A-10 Thunderbolt II Warthog aircraft
