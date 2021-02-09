@@ -1,0 +1,197 @@
+/*
+  The following #define tells DCS-BIOS that this is a RS-485 slave device.
+  It also sets the address of this slave device. The slave address should be
+  between 1 and 126 and must be unique among all devices on the same bus.
+*/
+#define DCSBIOS_RS485_SLAVE 15
+
+/*
+  The Arduino pin that is connected to the
+  /RE and DE pins on the RS-485 transceiver.
+*/
+#define TXENABLE_PIN 2
+#include <Keypad.h>
+#include "DcsBios.h"
+
+/* paste code snippets from the reference documentation here */
+const byte ROWS = 8; //four rows
+const byte COLS = 9; //three columns
+char keys[ROWS][COLS] = {
+  {'!','"','#','c','%','F','L','R','X'},
+  {'&','E','K','Q','W','Z'},
+  {'|','D','J','P','V','Y','('},
+  {')','C','I','O','U','=','@','£','$'},
+  {'{','A','B','G','H','M','N','S','T'},
+  {':','3','6','9','[','>','/',',','*'},
+  {';','2','5','8','0','-','<','}','½'},
+  {'+',']','_','a','b','1','4','7','.'},
+
+};
+byte rowPins[ROWS] = {13, A0, A1, 12, A2, A3, A4, A5}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {11, 9, 7, 10, 8, 6, 5, 4, 3}; //connect to the column pinouts of the keypad
+
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+
+
+
+void setup() {
+  DcsBios::setup();
+  keypad.addEventListener(keypadEvent);  // Add an event listener.
+  keypad.setHoldTime(100);               // Default is 1000mS
+  keypad.setDebounceTime(50);           // Default is 50mS
+}
+
+void loop() {
+  DcsBios::loop();
+   char key = keypad.getKey();
+}
+
+void keypadEvent(KeypadEvent KEY){  
+  switch (keypad.getState()) { // gives PRESSED, HOLD or RELEASED
+  case PRESSED: 
+    switch(KEY) { 
+    //CDU
+    case 'A': sendDcsBiosMessage("CDU_A", "1"); break; 
+    case 'B': sendDcsBiosMessage("CDU_B", "1"); break; 
+    case 'C': sendDcsBiosMessage("CDU_C", "1"); break;     
+    case 'D': sendDcsBiosMessage("CDU_D", "1"); break; 
+    case 'E': sendDcsBiosMessage("CDU_E", "1"); break; 
+    case 'F': sendDcsBiosMessage("CDU_F", "1"); break; 
+    case 'G': sendDcsBiosMessage("CDU_G", "1"); break; 
+    case 'H': sendDcsBiosMessage("CDU_H", "1"); break; 
+    case 'I': sendDcsBiosMessage("CDU_I", "1"); break; 
+    case 'J': sendDcsBiosMessage("CDU_J", "1"); break; 
+    case 'K': sendDcsBiosMessage("CDU_K", "1"); break; 
+    case 'L': sendDcsBiosMessage("CDU_L", "1"); break; 
+    case 'M': sendDcsBiosMessage("CDU_M", "1"); break; 
+    case 'N': sendDcsBiosMessage("CDU_N", "1"); break; 
+    case 'O': sendDcsBiosMessage("CDU_O", "1"); break;
+    case 'P': sendDcsBiosMessage("CDU_P", "1"); break;
+    case 'Q': sendDcsBiosMessage("CDU_Q", "1"); break; 
+    case 'R': sendDcsBiosMessage("CDU_R", "1"); break;   
+    case 'S': sendDcsBiosMessage("CDU_S", "1"); break;     
+    case 'T': sendDcsBiosMessage("CDU_T", "1"); break; 
+    case 'U': sendDcsBiosMessage("CDU_U", "1"); break;        
+    case 'V': sendDcsBiosMessage("CDU_V", "1"); break; 
+    case 'W': sendDcsBiosMessage("CDU_W", "1"); break; 
+    case 'X': sendDcsBiosMessage("CDU_X", "1"); break; 
+    case 'Y': sendDcsBiosMessage("CDU_Y", "1"); break; 
+    case 'Z': sendDcsBiosMessage("CDU_Z", "1"); break; 
+
+ 
+    case '0': sendDcsBiosMessage("CDU_0", "1"); break; 
+    case '1': sendDcsBiosMessage("CDU_1", "1"); break; 
+    case '2': sendDcsBiosMessage("CDU_2", "1"); break; 
+    case '3': sendDcsBiosMessage("CDU_3", "1"); break; 
+    case '4': sendDcsBiosMessage("CDU_4", "1"); break; 
+    case '5': sendDcsBiosMessage("CDU_5", "1"); break; 
+    case '6': sendDcsBiosMessage("CDU_6", "1"); break; 
+    case '7': sendDcsBiosMessage("CDU_7", "1"); break; 
+    case '8': sendDcsBiosMessage("CDU_8", "1"); break; 
+    case '9': sendDcsBiosMessage("CDU_9", "1"); break;  
+    case '.': sendDcsBiosMessage("CDU_POINT", "1"); break; 
+    case '/': sendDcsBiosMessage("CDU_SLASH", "1"); break; 
+        
+    case '!': sendDcsBiosMessage("CDU_LSK_3R", "1"); break; 
+    case '"': sendDcsBiosMessage("CDU_LSK_5R", "1"); break;
+    case '#': sendDcsBiosMessage("CDU_LSK_7R", "1"); break;
+    case 'c': sendDcsBiosMessage("CDU_LSK_9R", "1"); break;
+
+    case '+': sendDcsBiosMessage("CDU_LSK_3L", "1"); break; 
+    case ']': sendDcsBiosMessage("CDU_LSK_5L", "1"); break;
+    case '_': sendDcsBiosMessage("CDU_LSK_7L", "1"); break;
+    case 'a': sendDcsBiosMessage("CDU_LSK_9L", "1"); break;
+    
+    case '[': sendDcsBiosMessage("CDU_PG", "2"); break; 
+    case '½': sendDcsBiosMessage("CDU_PG", "0"); break; 
+    
+    case 'b': sendDcsBiosMessage("CDU_SYS", "1"); break; 
+    case '{': sendDcsBiosMessage("CDU_NAV", "1"); break; 
+    case ')': sendDcsBiosMessage("CDU_WP", "1"); break; 
+    case '|': sendDcsBiosMessage("CDU_OSET", "1"); break; 
+    case '&': sendDcsBiosMessage("CDU_FPM", "1"); break; 
+    case '%': sendDcsBiosMessage("CDU_PREV", "1"); break;  
+
+    case '(': sendDcsBiosMessage("CDU_MK", "1"); break; 
+    case '}': sendDcsBiosMessage("CDU_CLR", "1"); break; 
+    case '=': sendDcsBiosMessage("CDU_BCK", "1"); break; 
+    case '@': sendDcsBiosMessage("CDU_SPC", "1"); break; 
+    case '$': sendDcsBiosMessage("CDU_FA", "1"); break; 
+
+    
+  }}
+
+  
+    switch (keypad.getState()){  // gives PRESSED, HOLD or RELEASED
+  case RELEASED: // LMFD 
+    switch(KEY) { // Released KEYs or Neutral Rockers signal is sent
+    //CDU
+    case 'A': sendDcsBiosMessage("CDU_A", "0"); break; 
+    case 'B': sendDcsBiosMessage("CDU_B", "0"); break; 
+    case 'C': sendDcsBiosMessage("CDU_C", "0"); break;     
+    case 'D': sendDcsBiosMessage("CDU_D", "0"); break; 
+    case 'E': sendDcsBiosMessage("CDU_E", "0"); break; 
+    case 'F': sendDcsBiosMessage("CDU_F", "0"); break; 
+    case 'G': sendDcsBiosMessage("CDU_G", "0"); break; 
+    case 'H': sendDcsBiosMessage("CDU_H", "0"); break; 
+    case 'I': sendDcsBiosMessage("CDU_I", "0"); break; 
+    case 'J': sendDcsBiosMessage("CDU_J", "0"); break; 
+    case 'K': sendDcsBiosMessage("CDU_K", "0"); break; 
+    case 'L': sendDcsBiosMessage("CDU_L", "0"); break; 
+    case 'M': sendDcsBiosMessage("CDU_M", "0"); break; 
+    case 'N': sendDcsBiosMessage("CDU_N", "0"); break; 
+    case 'O': sendDcsBiosMessage("CDU_O", "0"); break;
+    case 'P': sendDcsBiosMessage("CDU_P", "0"); break;
+    case 'Q': sendDcsBiosMessage("CDU_Q", "0"); break; 
+    case 'R': sendDcsBiosMessage("CDU_R", "0"); break;   
+    case 'S': sendDcsBiosMessage("CDU_S", "0"); break;     
+    case 'T': sendDcsBiosMessage("CDU_T", "0"); break; 
+    case 'U': sendDcsBiosMessage("CDU_U", "0"); break;        
+    case 'V': sendDcsBiosMessage("CDU_V", "0"); break; 
+    case 'W': sendDcsBiosMessage("CDU_W", "0"); break; 
+    case 'X': sendDcsBiosMessage("CDU_X", "0"); break; 
+    case 'Y': sendDcsBiosMessage("CDU_Y", "0"); break; 
+    case 'Z': sendDcsBiosMessage("CDU_Z", "0"); break; 
+
+ 
+    case '0': sendDcsBiosMessage("CDU_0", "0"); break; 
+    case '1': sendDcsBiosMessage("CDU_1", "0"); break; 
+    case '2': sendDcsBiosMessage("CDU_2", "0"); break; 
+    case '3': sendDcsBiosMessage("CDU_3", "0"); break; 
+    case '4': sendDcsBiosMessage("CDU_4", "0"); break; 
+    case '5': sendDcsBiosMessage("CDU_5", "0"); break; 
+    case '6': sendDcsBiosMessage("CDU_6", "0"); break; 
+    case '7': sendDcsBiosMessage("CDU_7", "0"); break; 
+    case '8': sendDcsBiosMessage("CDU_8", "0"); break; 
+    case '9': sendDcsBiosMessage("CDU_9", "0"); break;  
+    case '.': sendDcsBiosMessage("CDU_POINT", "0"); break; 
+    case '/': sendDcsBiosMessage("CDU_SLASH", "0"); break; 
+        
+    case '!': sendDcsBiosMessage("CDU_LSK_3R", "0"); break; 
+    case '"': sendDcsBiosMessage("CDU_LSK_5R", "0"); break;
+    case '#': sendDcsBiosMessage("CDU_LSK_7R", "0"); break;
+    case 'c': sendDcsBiosMessage("CDU_LSK_9R", "0"); break;
+
+    case '+': sendDcsBiosMessage("CDU_LSK_3L", "0"); break; 
+    case ']': sendDcsBiosMessage("CDU_LSK_5L", "0"); break;
+    case '_': sendDcsBiosMessage("CDU_LSK_7L", "0"); break;
+    case 'a': sendDcsBiosMessage("CDU_LSK_9L", "0"); break;
+    
+    case '[': sendDcsBiosMessage("CDU_PG", "1"); break; 
+    case '½': sendDcsBiosMessage("CDU_PG", "1"); break; 
+    
+    case 'b': sendDcsBiosMessage("CDU_SYS", "0"); break; 
+    case '{': sendDcsBiosMessage("CDU_NAV", "0"); break; 
+    case ')': sendDcsBiosMessage("CDU_WP", "0"); break; 
+    case '|': sendDcsBiosMessage("CDU_OSET", "0"); break; 
+    case '&': sendDcsBiosMessage("CDU_FPM", "0"); break; 
+    case '%': sendDcsBiosMessage("CDU_PREV", "0"); break;  
+
+    case '(': sendDcsBiosMessage("CDU_MK", "0"); break; 
+    case '}': sendDcsBiosMessage("CDU_CLR", "0"); break; 
+    case '=': sendDcsBiosMessage("CDU_BCK", "0"); break; 
+    case '@': sendDcsBiosMessage("CDU_SPC", "0"); break; 
+    case '$': sendDcsBiosMessage("CDU_FA", "0"); break; 
+ 
+  }}
+}
