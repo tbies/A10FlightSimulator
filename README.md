@@ -8,5 +8,7 @@ This repo contains the following:
 * CNC Design Files for cockpit parts in Vectric Aspire CAD format
 
 /\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\
+
 The supplied GCODE and Toolpaths contained in the CNC design files are for *MY* CNC mills and tooling.  Using these directly on your CNC machine will most certainly cause it to bottom out / break tools or go out of limits.  You could even injure yourself.  You WILL need to re-compute all Toolpaths and GCODE for use on your machine before any cutting, engraving or milling begins.  
+
 /\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\
