@@ -1,4 +1,4 @@
-# A10FlightSimulator
+# Tom's A10 Flight Simulator Cockpit project
 
 
 | Author | [Tom Bies](https://github.com/tbies) |
