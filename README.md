@@ -16,7 +16,7 @@ The supplied GCODE and Toolpaths contained in the CNC design files are for *MY* 
 | Author | [Tom Bies](https://github.com/tbies) |
 |:---|:---|
 | Target platforms   | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li></ul> |
-| Core Hardware required | <ul><li>Arduino Nano, Uno and Mega 2560 platforms/li><li>USB cables</li><li>MAX RS487 Transceivers</li></ul> |
+| Core Hardware required | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li><li>USB cables</li><li>MAX RS487 Transceivers</li></ul> |
 | Software required | <ul><li>[DCS A-10 Flight Simulator platform](https://www.digitalcombatsimulator.com/en/)</li><li>[Arduino IDE](https://www.arduino.cc/en/software)</li><li>[Vectric Aspire](https://www.vectric.com/products/aspire)</li></ul>|
 | Programming Language | <ul><li>C</li><li>LUA</li><li>G-Code</li></ul> |
 | Prerequisites | Basic proficiency in using Ardunio Micro Contollers to interface with LEDs, switches, potentiometers, stepper and servo motors, and sensors<br></li></ul> |
