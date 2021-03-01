@@ -1,4 +1,15 @@
 # A10FlightSimulator
+
+
+| Author | [Tom Bies](https://github.com/tbies) |
+|:---|:---|
+| Target platforms   | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li></ul> |
+| Core Hardware required | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li><li>USB cables</li><li>MAX RS487 Transceivers</li></ul> |
+| Software required | <ul><li>[DCS A-10 Flight Simulator platform](https://www.digitalcombatsimulator.com/en/)</li><li>[Arduino IDE](https://www.arduino.cc/en/software)</li><li>[Vectric Aspire](https://www.vectric.com/products/aspire)</li></ul>|
+| Programming Language | <ul><li>C</li><li>LUA</li><li>G-Code</li></ul> |
+| Prerequisites | Basic proficiency in using Ardunio Micro Contollers to interface with LEDs, switches, potentiometers, stepper and servo motors, sensors, transceivers.<br></li></ul> |
+| Date | February 2021 |
+
 <img src = "https://github.com/tbies/A10FlightSimulator/blob/main/Cover.jpg" >
 Tom's Home Flight Simulator Cockpit project based on the A-10 Thunderbolt II Warthog aircraft flown by the United States Air Force.  
 
@@ -12,12 +23,3 @@ This repo contains the following:
 The supplied GCODE and Toolpaths contained in the CNC design files are for *MY* CNC mills and tooling.  Using these directly on your CNC machine will most certainly cause it to bottom out / break tools or go out of limits.  You could even injure yourself.  You WILL need to re-compute all Toolpaths and GCODE for use on your machine before any cutting, engraving or milling begins.  
 
 /\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\
-
-| Author | [Tom Bies](https://github.com/tbies) |
-|:---|:---|
-| Target platforms   | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li></ul> |
-| Core Hardware required | <ul><li>Arduino Nano, Uno and Mega 2560 platforms</li><li>USB cables</li><li>MAX RS487 Transceivers</li></ul> |
-| Software required | <ul><li>[DCS A-10 Flight Simulator platform](https://www.digitalcombatsimulator.com/en/)</li><li>[Arduino IDE](https://www.arduino.cc/en/software)</li><li>[Vectric Aspire](https://www.vectric.com/products/aspire)</li></ul>|
-| Programming Language | <ul><li>C</li><li>LUA</li><li>G-Code</li></ul> |
-| Prerequisites | Basic proficiency in using Ardunio Micro Contollers to interface with LEDs, switches, potentiometers, stepper and servo motors, sensors, transceivers.<br></li></ul> |
-| Date | February 2021 |
