@@ -11,6 +11,7 @@
 | Published on github | February 2021 |
 
 <img src = "https://github.com/tbies/A10FlightSimulator/blob/main/Cover.jpg" >
+<img src = "https://github.com/tbies/A10FlightSimulator/blob/main/Cover2.jpg" >
 Tom's Home Flight Simulator Cockpit project based on the A-10 Thunderbolt II Warthog aircraft flown by the United States Air Force.  
 
 This repo contains the following:
@@ -23,5 +24,6 @@ This repo contains the following:
 The supplied GCODE and Toolpaths contained in the CNC design files are for *MY* CNC mills and tooling.  Using these directly on your CNC machine will most certainly cause it to bottom out / break tools or go out of limits.  You could even injure yourself.  You WILL need to re-compute all Toolpaths and GCODE for use on your machine before any cutting, engraving or milling begins.  
 
 /\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\/\/\/\/\/\ WARNING /\/\/\/\/\
+
 [![](http://img.youtube.com/vi/PuVNLaH2i5Q/0.jpg)](http://www.youtube.com/watch?v=PuVNLaH2i5Q "DCS A-10C II Tank Killer trailer")<br>
 (Awesome YouTube video trailer of the DCS A10 Flight Simulator Platform)
