@@ -3,7 +3,7 @@
 
 | Author | [Tom Bies](https://github.com/tbies) |
 |:---|:---|
-| Target platforms   | <ul><li>Windows 10 x64</li><li>Arduino Nano, Uno and Mega 2560 platforms</li></ul> |
+| Target platforms   | <ul><li>Windows 10 x64</li><li>Arduino Nano, Uno and Mega 2560 platforms. Teency USB Development Boards</li></ul> |
 | Core Hardware required | <ul><li>A very high-end gaming PC running Windows 10 x64 with at least a Geforce GTX 2080TI graphics card</li><li>Several Arduino Nano, Uno and Mega 2560, and ARM based Teency USB Development Boards</li><li>Dupont wires and breadboards</li><li>MAX RS487 Transceivers</li></ul> |
 | Software required | <ul><li>[DCS A-10 Flight Simulator platform](https://www.digitalcombatsimulator.com/en/products/planes/tank_killer/)</li><li>[Arduino IDE](https://www.arduino.cc/en/software)</li><li>[Vectric Aspire](https://www.vectric.com/products/aspire)</li></ul>|
 | Programming Languages | <ul><li>C</li><li>LUA</li><li>G-Code</li></ul> |
